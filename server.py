@@ -35,11 +35,12 @@ def write_data_to_csv(data):
 def login():
     if request.method == 'POST':
         try:
-        data = request.form.to_dict()
-        write_data_to_csv(data)
-        return redirect('/thankyou.html')
+            data = request.form.to_dict()
+            write_data_to_csv(data)
+            return redirect('/thankyou.html')
         except:
             return 'Did not write to database'
 
     else:
         return 'Something went wrong! Try again!'
+
